@@ -6,15 +6,16 @@
 
   <title>Daniel Leite Junior</title>
 
-  <meta name="description" content="Fotografia esportiva, portfólio e projeto de viagem de Daniel Leite Junior">
-  <meta name="author" content="Daniel Leite Junior">
+  <meta name="description" content="Fotografia, portfólio e projeto de viagem de Daniel Leite Junior">
 
   <style>
     :root {
       --azul-escuro: #0b1c2d;
-      --azul-marinho: #102a43;
+      --azul-marinho: #0f2a44;
       --branco: #ffffff;
-      --cinza: #e5e7eb;
+      --cinza-claro: #e5e7eb;
+      --overlay: rgba(11, 28, 45, 0.6);
+      --sombra: 0 14px 40px rgba(0, 0, 0, 0.4);
       --fonte: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     }
 
@@ -30,125 +31,93 @@
       display: flex;
       flex-direction: column;
       background: var(--branco);
-      color: var(--azul-escuro);
     }
 
     /* ---------- Cabeçalho ---------- */
     header {
-      background: var(--branco);
-      padding: 1.5rem 1rem;
+      background: var(--azul-escuro);
+      padding: 2.2rem 1rem 3.8rem;
       text-align: center;
-      border-bottom: 1px solid var(--cinza);
+      position: relative;
     }
 
     header h1 {
-      font-size: 1.8rem;
-      color: var(--azul-escuro);
+      color: var(--branco);
+      font-size: 1.9rem;
       font-weight: 600;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.6px;
     }
 
-    /* ---------- Conteúdo Central ---------- */
+    /* ---------- Onda Topo ---------- */
+    .onda-topo {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      line-height: 0;
+    }
+
+    .onda-topo svg {
+      display: block;
+      width: 100%;
+      height: 65px;
+    }
+
+    /* ---------- Área Central ---------- */
     main {
       flex: 1;
       background: var(--azul-marinho);
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 2rem 1rem;
+      padding: 3.5rem 1rem 3.5rem;
+      position: relative;
     }
 
-    .botoes {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 1.5rem;
+    .grid-botoes {
       width: 100%;
-      max-width: 700px;
+      max-width: 760px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.8rem;
+      z-index: 1;
     }
 
     .botao {
-      background: var(--branco);
-      color: var(--azul-marinho);
-      text-decoration: none;
+      position: relative;
       aspect-ratio: 1 / 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 1rem;
-      font-size: 1.1rem;
-      font-weight: 500;
-      border-radius: 10px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border-radius: 16px;
+      overflow: hidden;
+      text-decoration: none;
+      box-shadow: var(--sombra);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .botao::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      filter: grayscale(100%) contrast(1.1);
+      transform: scale(1.05);
+      transition: transform 0.4s ease;
+    }
+
+    .botao::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(11, 28, 45, 0.35),
+        rgba(11, 28, 45, 0.85)
+      );
     }
 
     .botao:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+      transform: translateY(-6px);
+      box-shadow: 0 22px 50px rgba(0, 0, 0, 0.5);
     }
 
-    /* ---------- Rodapé ---------- */
-    footer {
-      background: var(--azul-escuro);
-      color: var(--branco);
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-    }
-
-    footer a {
-      color: var(--branco);
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    /* ---------- Ajustes Mobile ---------- */
-    @media (max-width: 480px) {
-      header h1 {
-        font-size: 1.5rem;
-      }
-
-      .botao {
-        font-size: 1rem;
-      }
-    }
-  </style>
-</head>
-
-<body>
-
-  <header>
-    <h1>Daniel Leite Junior</h1>
-  </header>
-
-  <main>
-    <div class="botoes">
-      <a class="botao" href="https://danielleitejr.com.br" target="_blank">
-        Suas fotos aqui!
-      </a>
-
-      <a class="botao" href="#" target="_self">
-        Conheça meu trabalho
-      </a>
-
-      <a class="botao" href="#" target="_self">
-        Projeto: Foto, mar e aventuras 
-      </a>
-    </div>
-  </main>
-
-  <footer>
-    <p>
-      Instagram:
-      <a href="https://instagram.com/fotomareaventuras" target="_blank">
-        @fotomareaventuras
-      </a>
-    </p>
-  </footer>
-
-</body>
-</html>
+    .botao:hover::before {
