@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Daniel Leite Junior</title>
+
+  <meta name="description" content="Fotografia esportiva, portfólio e projeto de viagem de Daniel Leite Junior">
+  <meta name="author" content="Daniel Leite Junior">
+
+  <style>
+    :root {
+      --azul-escuro: #0b1c2d;
+      --azul-marinho: #102a43;
+      --branco: #ffffff;
+      --cinza: #e5e7eb;
+      --fonte: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: var(--fonte);
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: var(--branco);
+      color: var(--azul-escuro);
+    }
+
+    /* ---------- Cabeçalho ---------- */
+    header {
+      background: var(--branco);
+      padding: 1.5rem 1rem;
+      text-align: center;
+      border-bottom: 1px solid var(--cinza);
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      color: var(--azul-escuro);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    /* ---------- Conteúdo Central ---------- */
+    main {
+      flex: 1;
+      background: var(--azul-marinho);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+
+    .botoes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1.5rem;
+      width: 100%;
+      max-width: 700px;
+    }
+
+    .botao {
+      background: var(--branco);
+      color: var(--azul-marinho);
+      text-decoration: none;
+      aspect-ratio: 1 / 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1rem;
+      font-size: 1.1rem;
+      font-weight: 500;
+      border-radius: 10px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .botao:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    }
+
+    /* ---------- Rodapé ---------- */
+    footer {
+      background: var(--azul-escuro);
+      color: var(--branco);
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: var(--branco);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* ---------- Ajustes Mobile ---------- */
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+
+      .botao {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Daniel Leite Junior</h1>
+  </header>
+
+  <main>
+    <div class="botoes">
+      <a class="botao" href="https://danielleitejr.com.br" target="_blank">
+        Venda de Fotos
+      </a>
+
+      <a class="botao" href="#" target="_self">
+        Portfólio
+      </a>
+
+      <a class="botao" href="#" target="_self">
+        Projeto de Viagem
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    <p>
+      Instagram:
+      <a href="https://instagram.com/seuinstagram" target="_blank">
+        @seuinstagram
+      </a>
+    </p>
+  </footer>
+
+</body>
+</html>
