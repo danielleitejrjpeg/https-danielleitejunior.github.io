@@ -121,3 +121,142 @@
     }
 
     .botao:hover::before {
+      transform: scale(1.12);
+    }
+
+    .conteudo-botao {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.6rem;
+      text-align: center;
+    }
+
+    .conteudo-botao span {
+      color: var(--branco);
+      font-size: 1.2rem;
+      font-weight: 600;
+      letter-spacing: 0.4px;
+    }
+
+    /* ---------- Imagens ---------- */
+    .fotos::before {
+      background-image: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee");
+    }
+
+    .portfolio::before {
+      background-image: url("https://images.unsplash.com/photo-1500534314209-a25ddb2bd429");
+    }
+
+    .viagem::before {
+      background-image: url("https://images.unsplash.com/photo-1501785888041-af3ef285b470");
+    }
+
+    /* ---------- Onda Rodapé ---------- */
+    .onda-rodape {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      line-height: 0;
+    }
+
+    .onda-rodape svg {
+      display: block;
+      width: 100%;
+      height: 65px;
+    }
+
+    /* ---------- Rodapé ---------- */
+    footer {
+      background: var(--azul-escuro);
+      color: var(--branco);
+      text-align: center;
+      padding: 3.2rem 1rem 1.4rem;
+      position: relative;
+    }
+
+    footer a {
+      color: var(--branco);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* ---------- Mobile ---------- */
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.6rem;
+      }
+
+      .conteudo-botao span {
+        font-size: 1.05rem;
+      }
+
+      .onda-topo svg,
+      .onda-rodape svg {
+        height: 45px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Daniel Leite Junior</h1>
+
+    <div class="onda-topo">
+      <svg viewBox="0 0 1440 90" preserveAspectRatio="none">
+        <path fill="#0f2a44" d="M0,40 C240,80 480,0 720,20 960,40 1200,80 1440,30 L1440,0 L0,0 Z"></path>
+      </svg>
+    </div>
+  </header>
+
+  <main>
+    <div class="grid-botoes">
+
+      <a class="botao fotos" href="https://danielleitejr.com.br" target="_blank">
+        <div class="conteudo-botao">
+          <span>Venda de Fotos</span>
+        </div>
+      </a>
+
+      <a class="botao portfolio" href="#">
+        <div class="conteudo-botao">
+          <span>Portfólio</span>
+        </div>
+      </a>
+
+      <a class="botao viagem" href="#">
+        <div class="conteudo-botao">
+          <span>Projeto de Viagem</span>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="onda-rodape">
+      <svg viewBox="0 0 1440 90" preserveAspectRatio="none">
+        <path fill="#0b1c2d" d="M0,30 C240,0 480,80 720,60 960,40 1200,0 1440,40 L1440,90 L0,90 Z"></path>
+      </svg>
+    </div>
+  </main>
+
+  <footer>
+    <p>
+      Instagram:
+      <a href="https://instagram.com/seuinstagram" target="_blank">
+        @seuinstagram
+      </a>
+    </p>
+  </footer>
+
+</body>
+</html>
