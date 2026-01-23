@@ -5,25 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Daniel Leite Junior</title>
-
   <meta name="description" content="Fotografia esportiva, projetos náuticos e expedições documentais de Daniel Leite Junior">
 
   <style>
-    /* =====================================================
-       VARIÁVEIS GLOBAIS DE CORES E FONTE
-       Evite alterar nomes, apenas valores
-    ====================================================== */
     :root {
       --azul-profundo: #071a2d;
       --azul-oceano: #0b3c5d;
       --azul-atlantico: #0f4c75;
       --branco: #ffffff;
-      --overlay: rgba(7, 26, 45, 0.7);
-      --sombra: 0 16px 45px rgba(0, 0, 0, 0.5);
+      --sombra: 0 16px 45px rgba(0,0,0,.5);
       --fonte: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     }
 
-    /* RESET BÁSICO */
     * {
       margin: 0;
       padding: 0;
@@ -35,61 +28,22 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      background: var(--branco);
     }
 
-    /* =====================================================
-       CABEÇALHO
-    ====================================================== */
     header {
-      background: linear-gradient(
-        180deg,
-        var(--azul-profundo),
-        var(--azul-oceano)
-      );
-      padding: 2.2rem 1rem 4rem;
+      background: linear-gradient(180deg, var(--azul-profundo), var(--azul-oceano));
+      padding: 2.5rem 1rem 4rem;
       text-align: center;
-      position: relative;
-    }
-
-    header h1 {
       color: var(--branco);
-      font-size: 2rem;
-      font-weight: 600;
-      letter-spacing: 1px;
-      text-transform: uppercase;
     }
 
-    /* ONDA SUPERIOR */
-    .onda-topo {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      line-height: 0;
-    }
-
-    .onda-topo svg {
-      display: block;
-      width: 100%;
-      height: 52px;
-    }
-
-    /* =====================================================
-       ÁREA PRINCIPAL COM BOTÕES
-    ====================================================== */
     main {
       flex: 1;
-      background: linear-gradient(
-        180deg,
-        var(--azul-oceano),
-        var(--azul-atlantico)
-      );
+      background: linear-gradient(180deg, var(--azul-oceano), var(--azul-atlantico));
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       padding: 4rem 1rem;
-      position: relative;
     }
 
     .grid-botoes {
@@ -98,203 +52,82 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 2rem;
-      z-index: 1;
     }
 
-    /* BOTÃO PADRÃO */
     .botao {
-      position: relative;
-      aspect-ratio: 1 / 1;
+      aspect-ratio: 1/1;
       border-radius: 18px;
       overflow: hidden;
       text-decoration: none;
       box-shadow: var(--sombra);
-      transition: transform 0.35s ease, box-shadow 0.35s ease;
-    }
-
-    .botao::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-size: cover;
-      background-position: center;
-      filter: grayscale(100%) contrast(1.15);
-      transform: scale(1.05);
-      transition: transform 0.45s ease;
-    }
-
-    .botao::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        180deg,
-        rgba(7, 26, 45, 0.25),
-        rgba(7, 26, 45, 0.9)
-      );
-    }
-
-    .botao:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 28px 60px rgba(0, 0, 0, 0.65);
-    }
-
-    .botao:hover::before {
-      transform: scale(1.15);
-    }
-
-    .conteudo-botao {
-      position: relative;
-      z-index: 1;
-      height: 100%;
       display: flex;
       align-items: flex-end;
       justify-content: center;
-      padding: 1.8rem;
-      text-align: center;
-    }
-
-    .conteudo-botao span {
-      color: var(--branco);
-      font-size: 1.25rem;
+      padding: 1.6rem;
+      color: white;
+      font-size: 1.2rem;
       font-weight: 600;
-      letter-spacing: 0.8px;
       text-transform: uppercase;
+      background-size: cover;
+      background-position: center;
+      transition: transform .3s ease;
     }
 
-    /* =====================================================
-       IMAGENS DOS BOTÕES (apenas visual)
-    ====================================================== */
-    .fotos::before {
+    .botao:hover {
+      transform: translateY(-6px);
+    }
+
+    .fotos {
       background-image: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e");
     }
 
-    .portfolio::before {
+    .portfolio {
       background-image: url("https://images.unsplash.com/photo-1500534314209-a25ddb2bd429");
     }
 
-    .viagem::before {
+    .viagem {
       background-image: url("https://images.unsplash.com/photo-1501785888041-af3ef285b470");
     }
 
-    /* ONDA INFERIOR */
-    .onda-rodape {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      line-height: 0;
-    }
-
-    .onda-rodape svg {
-      display: block;
-      width: 100%;
-      height: 70px;
-    }
-
-    /* =====================================================
-       RODAPÉ
-    ====================================================== */
     footer {
-      background: linear-gradient(
-        180deg,
-        var(--azul-oceano),
-        var(--azul-profundo)
-      );
-      color: var(--branco);
+      background: var(--azul-profundo);
+      color: white;
       text-align: center;
-      padding: 3.5rem 1rem 1.6rem;
-      font-size: 0.95rem;
-    }
-
-    footer a {
-      color: var(--branco);
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    /* MOBILE */
-    @media (max-width: 480px) {
-      header h1 {
-        font-size: 1.6rem;
-      }
-
-      .conteudo-botao span {
-        font-size: 1.05rem;
-      }
+      padding: 2rem 1rem;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- ===================================================
-       CABEÇALHO
-  ==================================================== -->
-  <header>
-    <h1>Daniel Leite Junior</h1>
+<header>
+  <h1>Daniel Leite Junior</h1>
+</header>
 
-    <div class="onda-topo">
-      <svg viewBox="0 0 1440 90" preserveAspectRatio="none">
-        <path fill="#0b3c5d" d="M0,50 C240,90 480,10 720,30 960,50 1200,90 1440,40 L1440,0 L0,0 Z"></path>
-      </svg>
-    </div>
-  </header>
+<main>
+  <div class="grid-botoes">
 
-  <!-- ===================================================
-       BOTÕES DE NAVEGAÇÃO PRINCIPAL
-       ATENÇÃO: alterar apenas os href se mover arquivos
-  ==================================================== -->
-  <main>
-    <div class="grid-botoes">
+    <!-- LOJA (externo) -->
+    <a class="botao fotos" href="https://danielleitejr.com.br" target="_blank">
+      Loja
+    </a>
 
-      <!-- LINK EXTERNO - FOTOS -->
-      <a class="botao fotos" href="https://danielleitejr.com.br" target="_blank">
-        <div class="conteudo-botao">
-          <span>Suas fotos aqui!</span>
-        </div>
-      </a>
+    <!-- PORTFÓLIO -->
+    <a class="botao portfolio" href="./portifolio/portifolio.html">
+      Portfólio
+    </a>
 
-      <!-- PORTFÓLIO
-           Arquivo em: /portifolio/portifolio.html -->
-      <a class="botao portfolio" href="portifolio/portifolio.html">
-        <div class="conteudo-botao">
-          <span>Portfólio</span>
-        </div>
-      </a>
+    <!-- PROJETO -->
+    <a class="botao viagem" href="./projeto/projeto.html">
+      Foto, Mar e Aventuras
+    </a>
 
-      <!-- PROJETO / FOTO MAR E AVENTURAS
-           Arquivo em: /projeto/projeto.html -->
-      <a class="botao viagem" href="projeto/projeto.html">
-        <div class="conteudo-botao">
-          <span>Foto Mar e Aventuras</span>
-        </div>
-      </a>
+  </div>
+</main>
 
-    </div>
-
-    <div class="onda-rodape">
-      <svg viewBox="0 0 1440 90" preserveAspectRatio="none">
-        <path fill="#071a2d" d="M0,30 C240,0 480,80 720,60 960,40 1200,0 1440,45 L1440,90 L0,90 Z"></path>
-      </svg>
-    </div>
-  </main>
-
-  <!-- ===================================================
-       RODAPÉ
-  ==================================================== -->
-  <footer>
-    <p>
-      Instagram:
-      <a href="https://instagram.com/seuinstagram" target="_blank">
-        @seuinstagram
-      </a>
-    </p>
-  </footer>
+<footer>
+  <p>© Daniel Leite Junior</p>
+</footer>
 
 </body>
 </html>
