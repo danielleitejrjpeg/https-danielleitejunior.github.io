@@ -1,324 +1,286 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<!--
-		GUIA GERAL
-		Este arquivo é a PÁGINA PORTAL do projeto Foto, Mar e Aventuras.
-		Função: conduzir o visitante para três destinos principais.
-		NÃO transforme esta página em portfólio ou projeto.
-	-->
+  <title>Daniel Leite Junior</title>
+  <meta name="description" content="Fotografia esportiva, projetos náuticos e expedições documentais de Daniel Leite Junior">
 
-	<title>Daniel Leite Junior</title>
+  <!--
+    =========================================================
+    GUIA DE SEGURANÇA – NÃO APAGAR SEM SABER O QUE ESTÁ FAZENDO
+    =========================================================
 
-	<meta name="description" content="Fotografia esportiva, projetos náuticos e expedições documentais de Daniel Leite Junior">
+    • Este index.html é a PÁGINA PORTAL do projeto.
+    • Ele SEMPRE deve ficar na RAIZ do repositório.
+    • Os links abaixo são RELATIVOS (compatíveis com GitHub Pages).
 
-	<style>
-		/*
-		GUIA DE ESTILO
-		As variáveis abaixo definem a identidade visual do projeto.
-		Altere cores APENAS aqui, se necessário.
-		*/
-		:root {
-			--azul-profundo: #071a2d;
-			--azul-oceano: #0b3c5d;
-			--azul-atlantico: #0f4c75;
-			--branco: #ffffff;
-			--overlay: rgba(7, 26, 45, 0.7);
-			--sombra: 0 16px 45px rgba(0, 0, 0, 0.5);
-			--fonte: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-		}
+    Estrutura esperada:
+    /
+    ├── index.html
+    ├── portifolio/
+    │   └── portifolio.html
+    ├── projeto/
+    │   └── projeto.html
 
-		/* Reset básico — não remover */
-		* {
-			margin: 0;
-			padding: 0;
-			box-sizing: border-box;
-			font-family: var(--fonte);
-		}
+    ❗ Se mudar nomes de pastas ou arquivos,
+       OBRIGATORIAMENTE ajuste os hrefs.
+  -->
 
-		body {
-			min-height: 100vh;
-			display: flex;
-			flex-direction: column;
-			background: var(--branco);
-		}
+  <style>
+    :root {
+      --azul-profundo: #071a2d;
+      --azul-oceano: #0b3c5d;
+      --azul-atlantico: #0f4c75;
+      --branco: #ffffff;
+      --overlay: rgba(7, 26, 45, 0.7);
+      --sombra: 0 16px 45px rgba(0, 0, 0, 0.5);
+      --fonte: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
 
-		/*
-		CABEÇALHO
-		Área de identidade.
-		Texto simples, sem links.
-		*/
-		header {
-			background: linear-gradient(
-				180deg,
-				var(--azul-profundo),
-				var(--azul-oceano)
-			);
-			padding: 2.2rem 1rem 4rem;
-			text-align: center;
-			position: relative;
-		}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: var(--fonte);
+    }
 
-		header h1 {
-			color: var(--branco);
-			font-size: 2rem;
-			font-weight: 600;
-			letter-spacing: 1px;
-			text-transform: uppercase;
-		}
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: var(--branco);
+    }
 
-		/*
-		ONDA TOPO
-		Elemento visual decorativo.
-		Não interfere em navegação.
-		*/
-		.onda-topo {
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			width: 100%;
-			line-height: 0;
-		}
+    /* ---------- Cabeçalho ---------- */
+    header {
+      background: linear-gradient(180deg, var(--azul-profundo), var(--azul-oceano));
+      padding: 2.2rem 1rem 4rem;
+      text-align: center;
+      position: relative;
+    }
 
-		.onda-topo svg {
-			display: block;
-			width: 100%;
-			height: 52px;
-		}
+    header h1 {
+      color: var(--branco);
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
 
-		/*
-		ÁREA CENTRAL
-		Contém os três botões principais.
-		Não remover a grid.
-		*/
-		main {
-			flex: 1;
-			background: linear-gradient(
-				180deg,
-				var(--azul-oceano),
-				var(--azul-atlantico)
-			);
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			padding: 4rem 1rem;
-			position: relative;
-		}
+    /* ---------- Onda topo ---------- */
+    .onda-topo {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      line-height: 0;
+    }
 
-		.grid-botoes {
-			width: 100%;
-			max-width: 820px;
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-			gap: 2rem;
-			z-index: 1;
-		}
+    .onda-topo svg {
+      display: block;
+      width: 100%;
+      height: 52px;
+    }
 
-		/*
-		BOTÕES
-		Cada botão é um link.
-		É seguro alterar:
-		- texto
-		- imagem de fundo
-		NÃO alterar:
-		- position
-		- aspect-ratio
-		*/
-		.botao {
-			position: relative;
-			aspect-ratio: 1 / 1;
-			border-radius: 18px;
-			overflow: hidden;
-			text-decoration: none;
-			box-shadow: var(--sombra);
-			transition: transform 0.35s ease, box-shadow 0.35s ease;
-		}
+    /* ---------- Área central ---------- */
+    main {
+      flex: 1;
+      background: linear-gradient(180deg, var(--azul-oceano), var(--azul-atlantico));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 1rem;
+      position: relative;
+    }
 
-		.botao::before {
-			content: "";
-			position: absolute;
-			inset: 0;
-			background-size: cover;
-			background-position: center;
-			filter: grayscale(100%) contrast(1.15);
-			transform: scale(1.05);
-			transition: transform 0.45s ease;
-		}
+    .grid-botoes {
+      width: 100%;
+      max-width: 820px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      z-index: 1;
+    }
 
-		.botao::after {
-			content: "";
-			position: absolute;
-			inset: 0;
-			background: linear-gradient(
-				180deg,
-				rgba(7, 26, 45, 0.25),
-				rgba(7, 26, 45, 0.9)
-			);
-		}
+    .botao {
+      position: relative;
+      aspect-ratio: 1 / 1;
+      border-radius: 18px;
+      overflow: hidden;
+      text-decoration: none;
+      box-shadow: var(--sombra);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
 
-		.botao:hover {
-			transform: translateY(-8px);
-			box-shadow: 0 28px 60px rgba(0, 0, 0, 0.65);
-		}
+    .botao::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      filter: grayscale(100%) contrast(1.15);
+      transform: scale(1.05);
+      transition: transform 0.45s ease;
+    }
 
-		.botao:hover::before {
-			transform: scale(1.15);
-		}
+    .botao::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(7, 26, 45, 0.25),
+        rgba(7, 26, 45, 0.9)
+      );
+    }
 
-		.conteudo-botao {
-			position: relative;
-			z-index: 1;
-			height: 100%;
-			display: flex;
-			align-items: flex-end;
-			justify-content: center;
-			padding: 1.8rem;
-			text-align: center;
-		}
+    .botao:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 28px 60px rgba(0, 0, 0, 0.65);
+    }
 
-		.conteudo-botao span {
-			color: var(--branco);
-			font-size: 1.25rem;
-			font-weight: 600;
-			letter-spacing: 0.8px;
-			text-transform: uppercase;
-		}
+    .botao:hover::before {
+      transform: scale(1.15);
+    }
 
-		/*
-		IMAGENS DOS BOTÕES
-		Altere apenas as URLs.
-		*/
-		.fotos::before {
-			background-image: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e");
-		}
+    .conteudo-botao {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 1.8rem;
+      text-align: center;
+    }
 
-		.portfolio::before {
-			background-image: url("https://images.unsplash.com/photo-1500534314209-a25ddb2bd429");
-		}
+    .conteudo-botao span {
+      color: var(--branco);
+      font-size: 1.25rem;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
 
-		.viagem::before {
-			background-image: url("https://images.unsplash.com/photo-1501785888041-af3ef285b470");
-		}
+    /* ---------- Imagens dos botões ---------- */
+    .fotos::before {
+      background-image: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e");
+    }
 
-		/*
-		ONDA RODAPÉ
-		Apenas decorativa.
-		*/
-		.onda-rodape {
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			width: 100%;
-			line-height: 0;
-		}
+    .portfolio::before {
+      background-image: url("https://images.unsplash.com/photo-1500534314209-a25ddb2bd429");
+    }
 
-		.onda-rodape svg {
-			display: block;
-			width: 100%;
-			height: 70px;
-		}
+    .viagem::before {
+      background-image: url("https://images.unsplash.com/photo-1501785888041-af3ef285b470");
+    }
 
-		/*
-		RODAPÉ
-		Links externos.
-		Seguro alterar texto e URLs.
-		*/
-		footer {
-			background: linear-gradient(
-				180deg,
-				var(--azul-oceano),
-				var(--azul-profundo)
-			);
-			color: var(--branco);
-			text-align: center;
-			padding: 3.5rem 1rem 1.6rem;
-			font-size: 0.95rem;
-		}
+    /* ---------- Onda rodapé ---------- */
+    .onda-rodape {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      line-height: 0;
+    }
 
-		footer a {
-			color: var(--branco);
-			text-decoration: none;
-			font-weight: 500;
-			letter-spacing: 0.5px;
-		}
+    .onda-rodape svg {
+      display: block;
+      width: 100%;
+      height: 70px;
+    }
 
-		footer a:hover {
-			text-decoration: underline;
-		}
+    /* ---------- Rodapé ---------- */
+    footer {
+      background: linear-gradient(180deg, var(--azul-oceano), var(--azul-profundo));
+      color: var(--branco);
+      text-align: center;
+      padding: 3.5rem 1rem 1.6rem;
+      font-size: 0.95rem;
+    }
 
-		/*
-		MOBILE
-		Não remover esta seção.
-		*/
-		@media (max-width: 480px) {
-			header h1 {
-				font-size: 1.6rem;
-			}
+    footer a {
+      color: var(--branco);
+      text-decoration: none;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
 
-			.conteudo-botao span {
-				font-size: 1.05rem;
-			}
+    footer a:hover {
+      text-decoration: underline;
+    }
 
-			.onda-topo svg,
-			.onda-rodape svg {
-				height: 48px;
-			}
-		}
-	</style>
+    /* ---------- Mobile ---------- */
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.6rem;
+      }
+
+      .conteudo-botao span {
+        font-size: 1.05rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
-	<header>
-		<h1>Daniel Leite Junior</h1>
 
-		<div class="onda-topo">
-			<svg viewBox="0 0 1440 90" preserveAspectRatio="none">
-				<path fill="#0b3c5d" d="M0,50 C240,90 480,10 720,30 960,50 1200,90 1440,40 L1440,0 L0,0 Z"></path>
-			</svg>
-		</div>
-	</header>
+  <header>
+    <h1>Daniel Leite Junior</h1>
 
-	<main>
-		<div class="grid-botoes">
+    <div class="onda-topo">
+      <svg viewBox="0 0 1440 90" preserveAspectRatio="none">
+        <path fill="#0b3c5d" d="M0,50 C240,90 480,10 720,30 960,50 1200,90 1440,40 L1440,0 L0,0 Z"></path>
+      </svg>
+    </div>
+  </header>
 
-			<!-- BOTÃO 1 — Loja / Projeto principal (link externo) -->
-			<a class="botao fotos" href="https://danielleitejr.com.br" target="_blank">
-				<div class="conteudo-botao">
-					<span>Suas fotos aqui!</span>
-				</div>
-			</a>
+  <main>
+    <div class="grid-botoes">
 
-			<!-- BOTÃO 2 — Portfólio -->
-			<a class="botao portfolio" href="portifolio.html">
-				<div class="conteudo-botao">
-					<span>Portfólio</span>
-				</div>
-			</a>
+      <!-- BOTÃO 1 – LOJA (EXTERNO) -->
+      <!-- Pode apontar para outro domínio sem afetar o portal -->
+      <a class="botao fotos" href="https://danielleitejr.com.br" target="_blank">
+        <div class="conteudo-botao">
+          <span>Suas fotos aqui!</span>
+        </div>
+      </a>
 
-			<!-- BOTÃO 3 — Projeto / Captação -->
-			<a class="botao viagem" href="projeto.html">
-				<div class="conteudo-botao">
-					<span>Foto Mar e Aventuras</span>
-				</div>
-			</a>
+      <!-- BOTÃO 2 – PORTFÓLIO -->
+      <!-- Arquivo está em /portifolio/portifolio.html -->
+      <a class="botao portfolio" href="./portifolio/portifolio.html">
+        <div class="conteudo-botao">
+          <span>Portfólio</span>
+        </div>
+      </a>
 
-		</div>
+      <!-- BOTÃO 3 – PROJETO / CAPTAÇÃO -->
+      <!-- Arquivo está em /projeto/projeto.html -->
+      <a class="botao viagem" href="./projeto/projeto.html">
+        <div class="conteudo-botao">
+          <span>Foto Mar e Aventuras</span>
+        </div>
+      </a>
 
-		<div class="onda-rodape">
-			<svg viewBox="0 0 1440 90" preserveAspectRatio="none">
-				<path fill="#071a2d" d="M0,30 C240,0 480,80 720,60 960,40 1200,0 1440,45 L1440,90 L0,90 Z"></path>
-			</svg>
-		</div>
-	</main>
+    </div>
 
-	<footer>
-		<p>
-			Instagram:
-			<a href="https://instagram.com/seuinstagram" target="_blank">@seuinstagram</a>
-		</p>
-	</footer>
+    <div class="onda-rodape">
+      <svg viewBox="0 0 1440 90" preserveAspectRatio="none">
+        <path fill="#071a2d" d="M0,30 C240,0 480,80 720,60 960,40 1200,0 1440,45 L1440,90 L0,90 Z"></path>
+      </svg>
+    </div>
+  </main>
+
+  <footer>
+    <p>
+      Instagram:
+      <a href="https://instagram.com/fotomareaventuras" target="_blank">
+        @fotomareaventuras
+      </a>
+    </p>
+  </footer>
+
 </body>
 </html>
