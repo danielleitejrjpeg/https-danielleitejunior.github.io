@@ -2,101 +2,218 @@
 <html lang="pt-BR">
 <head>
   <!-- =====================================================
-       PROJETO: FOTO, MAR E AVENTURAS
-       STATUS: EM CONSTRUÇÃO
+       CONFIGURAÇÕES BÁSICAS
+       NÃO ALTERAR SEM SABER O QUE ESTÁ FAZENDO
        ===================================================== -->
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Projeto · Foto, Mar e Aventuras</title>
 
-  <meta name="description" content="Projeto autoral Foto, Mar e Aventuras. Uma viagem pelo Brasil documentada em imagem.">
+  <meta name="description" content="Projeto autoral de fotografia em estrada. Ano 1 de testes pela região Sudeste.">
 
+  <!-- =====================================================
+       ESTILO EMBUTIDO
+       (evita erros de caminho no GitHub Pages)
+       ===================================================== -->
   <style>
-    /* RESET */
+    /* ---------- RESET ---------- */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
+    /* ---------- VARIÁVEIS VISUAIS ---------- */
+    :root {
+      --azul-escuro: #071a2d;
+      --azul-medio: #0b3c5d;
+      --cinza: #e6e6e6;
+      --branco: #ffffff;
+    }
+
+    /* ---------- CORPO ---------- */
     body {
-      min-height: 100vh;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: linear-gradient(
-        180deg,
-        #071a2d,
-        #0b3c5d,
-        #0f4c75
-      );
-      color: #ffffff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
+      background: linear-gradient(180deg, var(--azul-escuro), var(--azul-medio));
+      color: var(--cinza);
+      line-height: 1.7;
     }
 
-    .container {
-      padding: 40px 20px;
-      max-width: 640px;
+    /* ---------- CONTAINER CENTRAL ---------- */
+    main {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 80px 20px;
     }
 
+    /* ---------- TÍTULOS ---------- */
     h1 {
+      color: var(--branco);
       font-size: 2.2rem;
-      letter-spacing: 2px;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    h2 {
+      color: var(--branco);
+      font-size: 1.2rem;
+      margin: 50px 0 12px;
       text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
+    /* ---------- TEXTO ---------- */
     p {
-      font-size: 1.1rem;
-      opacity: 0.85;
-      line-height: 1.6;
+      margin-bottom: 16px;
+      font-size: 1rem;
     }
 
-    .linha {
-      width: 80px;
-      height: 2px;
-      background: rgba(255,255,255,0.6);
-      margin: 30px auto;
+    /* ---------- FRASE DE DESTAQUE ---------- */
+    blockquote {
+      margin-top: 50px;
+      padding-left: 20px;
+      border-left: 2px solid rgba(255,255,255,0.4);
+      font-style: italic;
+      color: var(--branco);
     }
 
-    a {
-      display: inline-block;
-      margin-top: 40px;
-      color: #ffffff;
-      text-decoration: none;
-      font-size: 0.95rem;
+    /* ---------- RODAPÉ ---------- */
+    footer {
+      text-align: center;
+      padding: 40px 20px 60px;
+      font-size: 0.85rem;
       opacity: 0.7;
     }
 
-    a:hover {
-      opacity: 1;
+    footer a {
+      color: var(--branco);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 
 <body>
 
-  <div class="container">
-    <h1>Projeto</h1>
+  <!-- =====================================================
+       CONTEÚDO PRINCIPAL DO PROJETO
+       ===================================================== -->
+  <main>
 
-    <div class="linha"></div>
+    <!-- TÍTULO DO PROJETO -->
+    <h1>Foto, Mar e Aventuras</h1>
+    <p><strong>Projeto em desenvolvimento · 2026</strong></p>
+
+    <!-- =================================================
+         APRESENTAÇÃO
+         ================================================= -->
+    <h2>Apresentação</h2>
 
     <p>
-      Foto, Mar e Aventuras está em construção.<br>
-      Uma viagem pelo Brasil para documentar<br>
-      estrada, mar, esporte e movimento humano.
+      Este projeto documenta viagens pela região Sudeste do Brasil ao longo de 2026.
+      O foco está em fotografia esportiva, deslocamento e observação do território.
     </p>
 
-    <p style="margin-top:20px;">
-      <strong>Em breve.</strong>
+    <p>
+      As viagens são realizadas com um Uno Camper 1999, utilizado como meio de transporte,
+      abrigo e base de trabalho.
+      O objetivo é testar o veículo, o ritmo de estrada e o processo fotográfico
+      antes de travessias mais longas.
     </p>
 
-    <!-- VOLTAR AO PORTAL -->
-    <a href="./index.html">← voltar</a>
-  </div>
+    <!-- =================================================
+         TERRITÓRIO
+         ================================================= -->
+    <h2>Território</h2>
+
+    <p>
+      As rotas incluem Minas Gerais, Rio de Janeiro, São Paulo e Espírito Santo.
+      A escolha do Sudeste se deve à viabilidade logística e à possibilidade de desenvolver
+      o projeto de forma contínua e responsável.
+    </p>
+
+    <p>
+      Não se trata de atravessar grandes distâncias,
+      mas de compreender o caminho possível.
+    </p>
+
+    <!-- =================================================
+         FOTOGRAFIA
+         ================================================= -->
+    <h2>Fotografia</h2>
+
+    <p>
+      O trabalho se concentra em provas esportivas, treinos e momentos de deslocamento.
+      As imagens surgem nos intervalos: antes da largada, depois da chegada,
+      entre um ponto e outro da estrada.
+    </p>
+
+    <p>
+      Estradas secundárias, cidades pequenas e pausas fazem parte do registro.
+    </p>
+
+    <!-- =================================================
+         PROCESSO
+         ================================================= -->
+    <h2>Processo</h2>
+
+    <p>
+      O veículo não é cenário, mas ferramenta.
+      Dormir, acordar, dirigir e fotografar fazem parte do mesmo fluxo.
+    </p>
+
+    <p>
+      O projeto se constrói no uso diário, nos ajustes e nas limitações encontradas
+      ao longo do caminho.
+    </p>
+
+    <!-- =================================================
+         APOIO
+         ================================================= -->
+    <h2>Apoio</h2>
+
+    <p>
+      Apoiar este projeto é contribuir para a continuidade do processo.
+      Não há roteiro fechado nem promessas de longo alcance.
+    </p>
+
+    <p>
+      O apoio permite manter as viagens, a produção e a organização do material
+      de forma sustentável.
+    </p>
+
+    <!-- =================================================
+         CONTINUIDADE
+         ================================================= -->
+    <h2>Continuidade</h2>
+
+    <p>
+      Chegar ao litoral faz parte do percurso.
+      As próximas direções serão definidas a partir da experiência acumulada.
+    </p>
+
+    <p>
+      O projeto avança conforme a estrada permite.
+    </p>
+
+    <!-- FRASE FINAL -->
+    <blockquote>
+      Este não é um projeto sobre chegar longe.<br>
+      É sobre seguir com consistência.
+    </blockquote>
+
+  </main>
+
+  <!-- =====================================================
+       RODAPÉ
+       ===================================================== -->
+  <footer>
+    © 2026 · Foto, Mar e Aventuras
+  </footer>
 
 </body>
 </html>
