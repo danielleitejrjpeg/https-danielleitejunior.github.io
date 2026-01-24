@@ -3,96 +3,103 @@
 <head>
   <!-- =====================================================
        CONFIGURAÇÕES BÁSICAS
-       NÃO REMOVER
+       NÃO ALTERAR SEM SABER O QUE ESTÁ FAZENDO
        ===================================================== -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Foto, Mar e Aventuras</title>
+  <title>Projeto · Foto, Mar e Aventuras</title>
 
-  <meta name="description" content="Fotografia esportiva">
+  <meta name="description" content="Projeto autoral de fotografia em estrada. Ano 1 de testes pela região Sudeste.">
 
   <!-- =====================================================
-       ESTILOS (CSS EMBUTIDO PARA EVITAR ERROS DE CAMINHO)
+       ESTILO EMBUTIDO
+       (evita erros de caminho no GitHub Pages)
        ===================================================== -->
   <style>
-    /* RESET BÁSICO */
+    /* ---------- RESET ---------- */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
-    /* CORPO DA PÁGINA */
+    /* ---------- VARIÁVEIS VISUAIS ---------- */
+    :root {
+      --azul-escuro: #071a2d;
+      --azul-medio: #0b3c5d;
+      --cinza: #e6e6e6;
+      --branco: #ffffff;
+    }
+
+    /* ---------- CORPO ---------- */
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background-color: #0e0e0e;
-      color: #ffffff;
-      line-height: 1.6;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: linear-gradient(180deg, var(--azul-escuro), var(--azul-medio));
+      color: var(--cinza);
+      line-height: 1.7;
     }
 
-    /* HERO / CAPA */
-    header {
-      min-height: 100vh;
-      background:
-        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-        url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee")
-        center / cover no-repeat;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 20px;
+    /* ---------- CONTAINER CENTRAL ---------- */
+    main {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 80px 20px 40px;
     }
 
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 15px;
-      letter-spacing: 2px;
+    /* ---------- TÍTULOS ---------- */
+    h1 {
+      color: var(--branco);
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
     }
 
-    header p {
-      max-width: 620px;
-      margin: 0 auto 30px;
-      font-size: 1.1rem;
-      opacity: 0.9;
+    h2 {
+      color: var(--branco);
+      font-size: 1.2rem;
+      margin: 50px 0 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
-    /* BOTÕES */
-    .buttons {
-      display: flex;
-      gap: 15px;
-      justify-content: center;
-      flex-wrap: wrap;
+    /* ---------- TEXTO ---------- */
+    p {
+      margin-bottom: 16px;
+      font-size: 1rem;
     }
 
-    .buttons a {
+    /* ---------- FRASE DE DESTAQUE ---------- */
+    blockquote {
+      margin-top: 50px;
+      padding-left: 20px;
+      border-left: 2px solid rgba(255,255,255,0.4);
+      font-style: italic;
+      color: var(--branco);
+    }
+
+    /* ---------- BOTÃO VOLTAR ---------- */
+    .voltar {
+      display: inline-block;
+      margin-top: 60px;
+      padding: 10px 22px;
+      border: 1px solid var(--branco);
+      color: var(--branco);
       text-decoration: none;
-      padding: 12px 26px;
-      border: 1px solid #ffffff;
-      color: #ffffff;
+      font-size: 0.9rem;
       letter-spacing: 1px;
       transition: all 0.3s ease;
     }
 
-    .buttons a:hover {
-      background-color: #ffffff;
-      color: #000000;
+    .voltar:hover {
+      background-color: var(--branco);
+      color: var(--azul-escuro);
     }
 
-    /* BOTÃO ATIVO (PÁGINA ATUAL) */
-    .buttons .ativo {
-      background-color: #ffffff;
-      color: #000000;
-      cursor: default;
-      pointer-events: none;
-    }
-
-    /* RODAPÉ */
+    /* ---------- RODAPÉ ---------- */
     footer {
       text-align: center;
-      padding: 30px 15px;
+      padding: 40px 20px 60px;
       font-size: 0.85rem;
       opacity: 0.7;
     }
@@ -102,50 +109,109 @@
 <body>
 
   <!-- =====================================================
-       HERO / PORTAL DO PROJETO
+       CONTEÚDO PRINCIPAL DO PROJETO
        ===================================================== -->
-  <header>
-    <div>
+  <main>
 
-      <!-- TÍTULO DO PROJETO -->
-      <h1>Foto, Mar e Aventuras</h1>
+    <!-- TÍTULO DO PROJETO -->
+    <h1>Foto, Mar e Aventuras</h1>
+    <p><strong>Projeto em desenvolvimento · 2026</strong></p>
 
-      <!-- TEXTO CONCEITUAL -->
-      <p>
-        Fotografia esportiva e cotidiana.
-      </p>
+    <!-- ================= APRESENTAÇÃO ================= -->
+    <h2>Apresentação</h2>
 
-      <!-- =================================================
-           BOTÕES DE NAVEGAÇÃO
-           GUIA:
-           • portifolio.html está na RAIZ
-           • loja é link externo
-           • este projeto é a página atual
-           ================================================= -->
-      <div class="buttons">
+    <p>
+      Este projeto documenta viagens pela região Sudeste do Brasil ao longo de 2026.
+      O foco está em fotografia esportiva, deslocamento e observação do território.
+    </p>
 
-        <!-- ENCONTRE SUAS FOTOS (LOJA EXTERNA) -->
-        <a href="https://danielleitejr.com.br" target="_blank">
-          Encontre suas fotos
-        </a>
+    <p>
+      As viagens são realizadas com um Uno Camper 1999, utilizado como meio de transporte,
+      abrigo e base de trabalho.
+      O objetivo é testar o veículo, o ritmo de estrada e o processo fotográfico
+      antes de travessias mais longas.
+    </p>
 
-        <!-- PORTFÓLIO -->
-        <a href="portifolio.html">
-          Portifólio
-        </a>
+    <!-- ================= TERRITÓRIO ================= -->
+    <h2>Território</h2>
 
-        <!-- PÁGINA ATUAL (DESATIVADO) -->
-        <a href="projeto.html">
-          Projeto: Foto, Mar e Aventuras
-        </a>
+    <p>
+      As rotas incluem Minas Gerais, Rio de Janeiro, São Paulo e Espírito Santo.
+      A escolha do Sudeste se deve à viabilidade logística e à possibilidade de desenvolver
+      o projeto de forma contínua e responsável.
+    </p>
 
-      </div>
-    </div>
-  </header>
+    <p>
+      Não se trata de atravessar grandes distâncias,
+      mas de compreender o caminho possível.
+    </p>
 
-  <!-- =====================================================
-       RODAPÉ
-       ===================================================== -->
+    <!-- ================= FOTOGRAFIA ================= -->
+    <h2>Fotografia</h2>
+
+    <p>
+      O trabalho se concentra em provas esportivas, treinos e momentos de deslocamento.
+      As imagens surgem nos intervalos: antes da largada, depois da chegada,
+      entre um ponto e outro da estrada.
+    </p>
+
+    <p>
+      Estradas secundárias, cidades pequenas e pausas fazem parte do registro.
+    </p>
+
+    <!-- ================= PROCESSO ================= -->
+    <h2>Processo</h2>
+
+    <p>
+      O veículo não é cenário, mas ferramenta.
+      Dormir, acordar, dirigir e fotografar fazem parte do mesmo fluxo.
+    </p>
+
+    <p>
+      O projeto se constrói no uso diário, nos ajustes e nas limitações encontradas
+      ao longo do caminho.
+    </p>
+
+    <!-- ================= APOIO ================= -->
+    <h2>Apoio</h2>
+
+    <p>
+      Apoiar este projeto é contribuir para a continuidade do processo.
+      Não há roteiro fechado nem promessas de longo alcance.
+    </p>
+
+    <p>
+      O apoio permite manter as viagens, a produção e a organização do material
+      de forma sustentável.
+    </p>
+
+    <!-- ================= CONTINUIDADE ================= -->
+    <h2>Continuidade</h2>
+
+    <p>
+      Chegar ao litoral faz parte do percurso.
+      As próximas direções serão definidas a partir da experiência acumulada.
+    </p>
+
+    <p>
+      O projeto avança conforme a estrada permite.
+    </p>
+
+    <!-- FRASE FINAL -->
+    <blockquote>
+      Este não é um projeto sobre chegar longe.<br>
+      É sobre seguir com consistência.
+    </blockquote>
+
+    <!-- ================= BOTÃO VOLTAR AO PORTAL =================
+         ESTE LINK APONTA PARA O index.html DA RAIZ
+         NÃO ALTERAR O NOME DO ARQUIVO
+         ======================================================= -->
+    <a href="index.html" class="voltar">← Voltar ao Portal</a>
+
+  </main>
+
+  <!-- ================= RODAPÉ ================= -->
   <footer>
     © 2026 · Foto, Mar e Aventuras
   </footer>
